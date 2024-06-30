@@ -1,0 +1,218 @@
+.header {
+  height: 120px;
+  background-image: linear-gradient(0, #fe6433, #f53e2d); 
+}
+
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__navbar-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 4px;
+}
+
+.header__navbar-item {
+  margin: 0 8px;
+  position: relative;
+  min-height: 26px;
+}
+
+.header__navbar-item--qr:hover .header__qr {
+  display: block;
+}
+
+.header__navbar-item--notification:hover .header__notify {
+  display: block;
+}
+
+
+
+.header__navbar-item,
+.header__navbar-item-link {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.header__navbar-item:hover,
+.header__navbar-item-link:hover,
+.header__navbar-icon-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+} 
+
+.header__navbar-item,
+.header__navbar-item-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__navbar-item--bold {
+  font-weight: 400;
+}
+
+.header__navbar-item--separate::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-left: 1px solid #FB9086;
+  height: 17px;
+  top: 50%;
+  right: -9.5px;
+  transform: translateY(-50%);
+}
+
+.header__navbar-icon-link {
+  color: var(--white-color);
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.header__navbar-icon {
+  font-size: 1.8rem;
+  margin: 0 4px;
+}
+
+.header__navbar-title--no-pointer {
+  cursor: text;
+  color: var(--white-color);
+}
+
+.header__qr {
+  background-color: transparent;
+  width: 180px;
+  position: absolute;
+  top: 100%;
+  /* parent */
+  left: 50%;
+  /* self */
+  transform: translate(-50%);
+  display: none;
+}
+
+.header__qr-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.header__qr-apps {
+  width: 100%;
+}
+
+.header__notify {
+  position: absolute;
+  /* top : 100%, because absolute position is depend on parent it's contained
+  so we use top : 100% to make it back to the expected position.
+  */
+  top: 130%;
+  right: 0;
+  width: 404px;
+  border: 1px solid #d3d3d3;
+  background-color: var(--white-color);
+  cursor: default;
+  transform-origin: calc(100% - 20px) top;
+  animation: headerNotifyGrowth ease-in 0.1s;
+  display: none;
+}
+
+
+.header__notify::before {
+  content: "";
+  border-width: 20px 54px;
+  border-style:solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  top: -27px;
+  right: 0;
+  display: block;
+}
+
+@keyframes headerNotifyGrowth {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.header__notify-header {
+  height: 40px;
+  background-color: var(--white-color);
+}
+
+.header__notify-header h3 {
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  /* we can use line-height: height of the element contain it */
+  /* to center vertical the element is contained by something */
+  line-height: 40px;
+  margin-left: 12px;
+  /* cursor: text; */
+  user-select: none;
+}
+
+.header__notify-list {
+  padding-left: 0;
+}
+
+.header__notify-item{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  min-width: 100px;
+  list-style: none;
+}
+
+.header__notify-item:hover {
+  background-color: #f1f1f1;
+}
+
+.header__notify-link {
+  display: flex;
+  padding: 0 12px;
+  width: 100%;
+  text-decoration: none;
+  background-color: rgba(238, 75, 43, 0.1);
+}
+
+.header__notify-img {
+  width: 48px;
+  height: 48px;
+  margin-top: 10px;
+  /* like ScaleType in Android XML */
+  object-fit: contain;
+}
+
+.header__notify-info {
+  margin-left: 12px;
+}
+
+.header__notify-name {
+  font-size: 1.6rem;
+  margin: 10px 10px;
+}
+
+.header__notify-description {
+  font-size: 1.4rem;
+  margin: 10px 10px;
+}
+
+.header__notify-footer {
+  display: flex;
+}
+
+.header__notify-footer-btn {
+  width: 100%;
+  text-decoration: none;
+  color: var(--text-color); 
+  padding: 8px 16px;
+  text-align: center;
+}
