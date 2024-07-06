@@ -52,8 +52,8 @@ html {
 }
 
 .grid__column-2-4 {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
   width: 20%;
 }
 
@@ -74,6 +74,7 @@ html {
   left: 0;
   display: none;
   animation: fadeIn linear 0.1s;
+  z-index: 2;
 }
 
 .modal__overlay {
@@ -119,11 +120,6 @@ html {
   cursor: default;
   background-color: #c3c3c3;
   color: #949494;
-}
-
-.home-product-item {
-  background-color: var(--white-color);
-  margin-top: 24px;
 }
 
 .home-product-item__img {
